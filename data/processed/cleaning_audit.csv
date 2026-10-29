@@ -1,0 +1,8 @@
+rule,removed,remaining
+raw_rows,0,1067371
+exact_duplicate_rows,34335,1033036
+missing_or_nonfinite_required,0,1033036
+cancellation_invoices,19104,1013932
+nonpositive_units_or_price,6019,1007913
+nonmerchandise_codes,4700,1003213
+incomplete_final_day,1611,1001602

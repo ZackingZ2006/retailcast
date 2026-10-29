@@ -1,0 +1,167 @@
+{
+  "config": {
+    "horizon": 28,
+    "cv_folds": 4,
+    "calibration_folds": 2,
+    "markets": 5,
+    "min_history": 112,
+    "origin_stride": 7,
+    "seed": 42,
+    "alpha_ridge": 100.0,
+    "gb_iterations": 180
+  },
+  "markets": [
+    "United Kingdom",
+    "Netherlands",
+    "EIRE",
+    "Denmark",
+    "France"
+  ],
+  "selection": {
+    "Denmark": "gbm_deep",
+    "EIRE": "gbm_shallow",
+    "France": "gbm_shallow",
+    "Netherlands": "gbm_deep",
+    "United Kingdom": "weekday_mean_8w"
+  },
+  "history_start": "2009-12-01",
+  "history_end": "2011-12-08",
+  "holdout_start": "2011-11-11",
+  "holdout_end": "2011-12-08",
+  "holdout": [
+    {
+      "model": "selected_champion",
+      "MAE": 1246.4296354493997,
+      "RMSE": 3285.37406050008,
+      "WAPE": 0.2663193310474902,
+      "MASE": 0.6451589034220585,
+      "bias_pct": -0.1726683352673968
+    },
+    {
+      "model": "weekday_mean_8w",
+      "MAE": 1334.880357142857,
+      "RMSE": 3359.1308902670685,
+      "WAPE": 0.2852182214157188,
+      "MASE": 0.7456384981294198,
+      "bias_pct": -0.15729844069783236
+    },
+    {
+      "model": "seasonal_naive",
+      "MAE": 1659.0642857142857,
+      "RMSE": 3660.7743296817875,
+      "WAPE": 0.35448522577602637,
+      "MASE": 0.8672598531267021,
+      "bias_pct": 0.11034767997142983
+    }
+  ],
+  "intervals": [
+    {
+      "market": "Denmark",
+      "n": 28,
+      "coverage_80": 0.7857142857142857,
+      "width_80": 46.02434658871355,
+      "interval_score_80": 605.2319831513843,
+      "coverage_95": 0.9642857142857143,
+      "width_95": 632.8572529698371,
+      "interval_score_95": 1160.2730895453337
+    },
+    {
+      "market": "EIRE",
+      "n": 28,
+      "coverage_80": 0.8928571428571429,
+      "width_80": 1475.7256777243545,
+      "interval_score_80": 2557.347226442441,
+      "coverage_95": 1.0,
+      "width_95": 3262.008116370893,
+      "interval_score_95": 3262.008116370893
+    },
+    {
+      "market": "France",
+      "n": 28,
+      "coverage_80": 0.8571428571428571,
+      "width_80": 885.342687252055,
+      "interval_score_80": 1563.657786080168,
+      "coverage_95": 1.0,
+      "width_95": 2674.264018171439,
+      "interval_score_95": 2674.264018171439
+    },
+    {
+      "market": "Netherlands",
+      "n": 28,
+      "coverage_80": 0.7857142857142857,
+      "width_80": 1622.5049364178788,
+      "interval_score_80": 6619.0963942782755,
+      "coverage_95": 1.0,
+      "width_95": 10712.48182994344,
+      "interval_score_95": 10712.48182994344
+    },
+    {
+      "market": "United Kingdom",
+      "n": 28,
+      "coverage_80": 0.9285714285714286,
+      "width_80": 17411.410714285714,
+      "interval_score_80": 26415.160714285714,
+      "coverage_95": 0.9285714285714286,
+      "width_95": 31538.553571428572,
+      "interval_score_95": 44569.624999999985
+    }
+  ],
+  "forecast_start": "2011-12-09",
+  "forecast_end": "2012-01-05",
+  "runtime_seconds": 148.57,
+  "processed_sha256": "1fb5c5651576b2b26da4d243aabb0902d7e4baef9ab8c6de83790c1ebbf06368",
+  "python": "3.12.14",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "statsmodels": "0.15.0",
+    "matplotlib": "3.11.2"
+  },
+  "feature_names": [
+    "market_0",
+    "market_1",
+    "market_2",
+    "market_3",
+    "market_4",
+    "log_level",
+    "origin_lag_1",
+    "origin_lag_2",
+    "origin_lag_3",
+    "origin_lag_7",
+    "origin_lag_14",
+    "origin_lag_21",
+    "origin_lag_28",
+    "origin_lag_56",
+    "origin_lag_84",
+    "mean_7",
+    "std_7",
+    "zero_share_7",
+    "mean_14",
+    "std_14",
+    "zero_share_14",
+    "mean_28",
+    "std_28",
+    "zero_share_28",
+    "mean_56",
+    "std_56",
+    "zero_share_56",
+    "mean_112",
+    "std_112",
+    "zero_share_112",
+    "recent_trend",
+    "horizon",
+    "target_dow_sin",
+    "target_dow_cos",
+    "target_doy_sin",
+    "target_doy_cos",
+    "target_month",
+    "christmas",
+    "new_year",
+    "weekday_profile",
+    "has_year_anchor",
+    "year_anchor"
+  ],
+  "training_rows_full": 12310,
+  "warning": "Historical continuation only. Intervals use 56 earlier errors/market; temporal dependence and seasonality shifts invalidate exchangeability guarantees."
+}

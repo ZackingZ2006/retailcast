@@ -1,0 +1,81 @@
+{
+  "source": "https://archive.ics.uci.edu/dataset/502/online+retail+ii",
+  "download_url": "https://archive.ics.uci.edu/static/public/502/online+retail+ii.zip",
+  "doi": "10.24432/C5CG6D",
+  "citation": "Chen, D. (2012). Online Retail II. UCI Machine Learning Repository.",
+  "license": "CC BY 4.0",
+  "raw_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "sheets": {
+    "Year 2009-2010": 525461,
+    "Year 2010-2011": 541910
+  },
+  "raw_rows": 1067371,
+  "audit": [
+    {
+      "rule": "raw_rows",
+      "removed": 0,
+      "remaining": 1067371
+    },
+    {
+      "rule": "exact_duplicate_rows",
+      "removed": 34335,
+      "remaining": 1033036
+    },
+    {
+      "rule": "missing_or_nonfinite_required",
+      "removed": 0,
+      "remaining": 1033036
+    },
+    {
+      "rule": "cancellation_invoices",
+      "removed": 19104,
+      "remaining": 1013932
+    },
+    {
+      "rule": "nonpositive_units_or_price",
+      "removed": 6019,
+      "remaining": 1007913
+    },
+    {
+      "rule": "nonmerchandise_codes",
+      "removed": 4700,
+      "remaining": 1003213
+    },
+    {
+      "rule": "incomplete_final_day",
+      "removed": 1611,
+      "remaining": 1001602
+    }
+  ],
+  "target": "daily gross positive merchandise units sold, excluding cancellations",
+  "start": "2009-12-01",
+  "end": "2011-12-08",
+  "excluded_partial_date": "2011-12-09",
+  "markets": [
+    "United Kingdom",
+    "Netherlands",
+    "EIRE",
+    "Denmark",
+    "France"
+  ],
+  "market_selection_end": "2011-05-26",
+  "zero_fill_assumption": "No recorded eligible transactions means zero observed sales; outages are not identifiable.",
+  "duplicate_assumption": "Exact repeated source rows are treated as accidental duplicates; no line-level transaction key exists.",
+  "known_limitations": [
+    "Sales are not unconstrained demand",
+    "No stock, price-plan or promotion covariates",
+    "Historical gift retailer with wholesale orders",
+    "Final forecast is a historical continuation, not a forecast of 2026"
+  ],
+  "panel_shape": [
+    738,
+    5
+  ],
+  "retrieval": {
+    "retrieved_from": "https://raw.githubusercontent.com/KristerMartinez/online_retail_ii/main/online_retail_II.xlsx",
+    "original_source": "https://archive.ics.uci.edu/dataset/502/online+retail+ii",
+    "reason": "Original UCI transfer was too slow; downloaded unmodified workbook mirror",
+    "uci_prefix_bytes_matched": 4128768,
+    "sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980"
+  }
+}

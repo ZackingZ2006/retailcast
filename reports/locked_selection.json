@@ -1,0 +1,30 @@
+{
+  "criterion": "mean validation MASE per market",
+  "selection": {
+    "Denmark": "gbm_deep",
+    "EIRE": "gbm_shallow",
+    "France": "gbm_shallow",
+    "Netherlands": "gbm_deep",
+    "United Kingdom": "weekday_mean_8w"
+  },
+  "validation_end": "2011-09-15",
+  "candidates": [
+    "seasonal_naive",
+    "weekday_mean_8w",
+    "ets_weekly",
+    "ridge_direct",
+    "gbm_shallow",
+    "gbm_deep"
+  ],
+  "config": {
+    "horizon": 28,
+    "cv_folds": 4,
+    "calibration_folds": 2,
+    "markets": 5,
+    "min_history": 112,
+    "origin_stride": 7,
+    "seed": 42,
+    "alpha_ridge": 100.0,
+    "gb_iterations": 180
+  }
+}
