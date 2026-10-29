@@ -1,0 +1,2 @@
+# Keep files byte-for-byte: reported SHA-256 hashes depend on exact line endings.
+* -text
